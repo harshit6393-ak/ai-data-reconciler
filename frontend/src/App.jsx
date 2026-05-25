@@ -35,10 +35,10 @@ function App() {
       formData.append("receipt_image", imageFile)
 
       // 2. Send it to our new vision endpoint (Note: Do NOT set Content-Type manually here)
-      const response = await fetch('http://127.0.0.1:8000/api/reconcile-vision', {
-        method: 'POST',
-        body: formData
-      })
+      const response = await fetch('https://web-production-9d860.up.railway.app/api/reconcile-vision', {
+    method: 'POST',
+    body: formData
+})
       
       const data = await response.json()
       if (!response.ok) throw new Error(data.detail || "Server error")
